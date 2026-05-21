@@ -27,6 +27,9 @@ public class LotteryGameUniversalGUI extends javax.swing.JFrame {
      */
     public LotteryGameUniversalGUI() {
         initComponents();
+        
+        //gray panal 101
+        specializedGameInterfacePanel.setVisible(false);
     }
 
     /**
@@ -45,14 +48,18 @@ public class LotteryGameUniversalGUI extends javax.swing.JFrame {
         specializedGameInterfacePanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 300));
 
         universalContentPanel.setMaximumSize(new java.awt.Dimension(400, 300));
         universalContentPanel.setMinimumSize(new java.awt.Dimension(400, 300));
 
-        universalOutputConsole.setText("jTextField1");
+        universalOutputConsole.setText("Hey welcome to LotteryGame");
         universalOutputConsole.setMaximumSize(new java.awt.Dimension(603, 34059403));
         universalOutputConsole.setMinimumSize(new java.awt.Dimension(400, 300));
+        universalOutputConsole.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                universalOutputConsoleActionPerformed(evt);
+            }
+        });
         universalContentPanel.setViewportView(universalOutputConsole);
 
         standardButtonLeft.setText("Start");
@@ -68,11 +75,11 @@ public class LotteryGameUniversalGUI extends javax.swing.JFrame {
         specializedGameInterfacePanel.setLayout(specializedGameInterfacePanelLayout);
         specializedGameInterfacePanelLayout.setHorizontalGroup(
             specializedGameInterfacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 185, Short.MAX_VALUE)
         );
         specializedGameInterfacePanelLayout.setVerticalGroup(
             specializedGameInterfacePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -84,22 +91,24 @@ public class LotteryGameUniversalGUI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(universalContentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(280, 280, 280)
+                        .addGap(83, 83, 83)
                         .addComponent(specializedGameInterfacePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(standardButtonLeft, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
                         .addComponent(StandardButtonRight, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(universalContentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(specializedGameInterfacePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(specializedGameInterfacePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(standardButtonLeft)
@@ -112,14 +121,27 @@ public class LotteryGameUniversalGUI extends javax.swing.JFrame {
 
     private void standardButtonLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_standardButtonLeftActionPerformed
         // TODO add your handling code here:
-        universalOutputConsole.setText("The game is starting...");
+        universalOutputConsole.setText("The game is starting...Play it's your turn!");
 specializedGameInterfacePanel.setBackground(new java.awt.Color(232, 232, 232));
-specializedGameInterfacePanel.repaint();
+//interface 101
+specializedGameInterfacePanel.setVisible(true);
+standardButtonLeft.setEnabled(false);
+this.revalidate();
+this.repaint();
 
 
         
         
     }//GEN-LAST:event_standardButtonLeftActionPerformed
+
+  
+   
+    
+    
+    
+    private void universalOutputConsoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_universalOutputConsoleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_universalOutputConsoleActionPerformed
 
     /**
      * @param args the command line arguments
